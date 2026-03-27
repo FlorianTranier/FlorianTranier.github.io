@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cre8Call — Florian Tranier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">florian<span>.</span>dev</span>
+    <div class="nav-links">
+      <a href="index.html">Projects</a>
+      <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://blog.tranier.dev" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="project-page">
+
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to projects
+  </a>
+
+  <div class="project-header">
+    <div class="project-icon" style="background:rgba(62,207,142,0.12)">🎙️</div>
+    <div class="project-header-info">
+      <h1>Cre8Call</h1>
+      <p>Dynamic voice channel generator and manager for Discord</p>
+      <div class="project-header-badges">
+        <span class="tag lang" style="color:#f1e05a">JavaScript</span>
+        <span class="tag">Discord.js v14</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+    <div class="project-header-actions">
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/Cre8Call" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="prose-section">
+    <h2>Overview</h2>
+    <p>
+      Cre8Call solves a classic Discord server problem: managing voice channels manually is tedious. Server admins either create too many permanent channels that sit empty, or too few — forcing users to pile into the same room.
+    </p>
+    <p>
+      Cre8Call automates this entirely. A single "generator" voice channel acts as an entry point — the moment a user joins it, the bot creates a fresh, dedicated voice channel just for them and moves them in. When everyone leaves, the channel is cleaned up automatically. Redis is used to track channel state across bot restarts, ensuring no orphaned channels are left behind.
+    </p>
+  </div>
+
+  <!-- Use Cases -->
+  <div class="prose-section">
+    <h2>Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <div class="uc-icon">🎮</div>
+        <h3>Gaming servers</h3>
+        <p>Separate groups of players into their own rooms without manual channel creation.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">📚</div>
+        <h3>Study communities</h3>
+        <p>Let members spin up private focus rooms on demand, then vanish when done.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">💼</div>
+        <h3>Work servers</h3>
+        <p>Auto-provision meeting rooms for teams without cluttering the channel list.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">🧹</div>
+        <h3>Self-cleaning rooms</h3>
+        <p>Empty channels are removed automatically — the server stays organised at all times.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it Works -->
+  <div class="prose-section">
+    <h2>How It Works</h2>
+    <ul class="feature-list">
+      <li>Admin designates one or more voice channels as <em>generator channels</em></li>
+      <li>When a user joins a generator channel, the bot creates a new private voice channel and moves them in instantly</li>
+      <li>The new channel's ID is stored in Redis so state survives bot restarts</li>
+      <li>An empty-channel listener continuously monitors channels; as soon as the last member leaves, the channel is deleted</li>
+      <li>Slash commands let admins configure which channels act as generators</li>
+      <li>No leftover channels — Redis ensures consistency even after crashes or redeploys</li>
+    </ul>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="prose-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        JavaScript (ESM)
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Discord.js v14
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M0 0v24h24V0zm17.777 17.777H6.223V6.223h11.554z"/></svg>
+        Redis
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185v-4.51a.186.186 0 0 0-.186-.185h-2.119a.185.185 0 0 0-.185.185v4.51c0 .102.083.185.185.185M13.17 0H2.547a.185.185 0 0 0-.185.185v19.726c0 .102.083.185.185.185H13.17a.185.185 0 0 0 .184-.185V.185A.185.185 0 0 0 13.17 0z"/></svg>
+        Docker
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+        GatewayIntents (Voice)
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html">← All projects</a> · <a href="https://github.com/FlorianTranier/Cre8Call" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

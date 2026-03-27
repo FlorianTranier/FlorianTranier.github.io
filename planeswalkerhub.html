@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlaneswalkerHub Tracker — Florian Tranier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">florian<span>.</span>dev</span>
+    <div class="nav-links">
+      <a href="index.html">Projects</a>
+      <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://blog.tranier.dev" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="project-page">
+
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to projects
+  </a>
+
+  <div class="project-header">
+    <div class="project-icon" style="background:rgba(255,101,132,0.12)">🃏</div>
+    <div class="project-header-info">
+      <h1>PlaneswalkerHub Tracker</h1>
+      <p>MTG Commander game tracker and stats bot for Discord</p>
+      <div class="project-header-badges">
+        <span class="tag lang" style="color:#f1e05a">JavaScript</span>
+        <span class="tag">Discord.js v14</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">MeiliSearch</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+    <div class="project-header-actions">
+      <a class="btn btn-primary" href="https://planeswalkerhub.com" target="_blank" rel="noopener">
+        planeswalkerhub.com
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/planeswalkerhub-tracker-bot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="prose-section">
+    <h2>Overview</h2>
+    <p>
+      PlaneswalkerHub Tracker is the Discord bot powering the competitive side of <a href="https://planeswalkerhub.com" target="_blank" rel="noopener" style="color:var(--accent)">planeswalkerhub.com</a> — a community hub for Magic: The Gathering Commander players. It brings structured game logging and analytics directly into Discord, where MTG groups already hang out.
+    </p>
+    <p>
+      Players register completed Commander games with up to 5 participants, choosing their commanders via MeiliSearch-powered autocomplete. The bot tracks win rates, average positions, commander performance, and head-to-head matchups — all scoped per Discord server so each community has its own private leaderboard.
+    </p>
+  </div>
+
+  <!-- Use Cases -->
+  <div class="prose-section">
+    <h2>Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <div class="uc-icon">📊</div>
+        <h3>Track your meta</h3>
+        <p>See which commanders dominate your local playgroup and who has the best win rate.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">⚔️</div>
+        <h3>Head-to-head</h3>
+        <p>Compare two players' performance directly against each other across all recorded games.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">📜</div>
+        <h3>Game history</h3>
+        <p>Browse past games with pagination — filter by player or guest to review specific histories.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">🏆</div>
+        <h3>Competitive leagues</h3>
+        <p>Maintain an ongoing record across seasons; position-based ranking supports pods of 3 to 5.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Commands -->
+  <div class="prose-section">
+    <h2>Commands</h2>
+    <ul class="feature-list">
+      <li><strong>/register</strong> — log a finished Commander game with up to 5 players and their commanders (autocomplete powered by MeiliSearch)</li>
+      <li><strong>/stats player</strong> — view win rates, average finishing position, and breakdown by pod size (3p/4p/5p)</li>
+      <li><strong>/stats commander</strong> — see how each commander performs across all logged games</li>
+      <li><strong>/h2h @player1 @player2</strong> — paginated head-to-head matchup comparison between two players</li>
+      <li><strong>/history</strong> — browse recent games with optional filters by player or guest name</li>
+      <li><strong>/ping</strong> — health check to verify the bot is online</li>
+    </ul>
+  </div>
+
+  <!-- Architecture -->
+  <div class="prose-section">
+    <h2>Architecture</h2>
+    <ul class="feature-list">
+      <li>All game data stored in <strong>Supabase</strong> (Postgres) with server-scoped isolation — each Discord guild sees only its own data</li>
+      <li>Commander card search powered by <strong>MeiliSearch</strong> for instant, typo-tolerant autocomplete in slash command options</li>
+      <li>Position-based results stored per game (1st through 5th) to support flexible stat queries</li>
+      <li>Guest player support alongside Discord user tagging — non-Discord friends can be tracked by name</li>
+      <li>Containerised with Docker for reproducible deployment; CI/CD via GitHub Actions</li>
+    </ul>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="prose-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        JavaScript (ESM)
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Discord.js v14
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M21 7v10l-9 5-9-5V7l9-5 9 5z"/></svg>
+        Supabase (Postgres)
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93V18c0-.55-.45-1-1-1s-1 .45-1 1v1.93C7.06 19.48 4.52 16.94 4.07 14H6c.55 0 1-.45 1-1s-.45-1-1-1H4.07C4.52 9.06 7.06 6.52 10 6.07V8c0 .55.45 1 1 1s1-.45 1-1V6.07c2.94.45 5.48 2.99 5.93 5.93H16c-.55 0-1 .45-1 1s.45 1 1 1h1.93c-.45 2.94-2.99 5.48-5.93 5.93z"/></svg>
+        MeiliSearch
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185v-4.51a.186.186 0 0 0-.186-.185h-2.119a.185.185 0 0 0-.185.185v4.51c0 .102.083.185.185.185M13.17 0H2.547a.185.185 0 0 0-.185.185v19.726c0 .102.083.185.185.185H13.17a.185.185 0 0 0 .184-.185V.185A.185.185 0 0 0 13.17 0z"/></svg>
+        Docker
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+        GitHub Actions CI
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html">← All projects</a> · <a href="https://github.com/FlorianTranier/planeswalkerhub-tracker-bot" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florian Tranier — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Florian<span> </span>Tranier</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Projects</a>
+      <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://blog.tranier.dev" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="hero-avatar" src="https://avatars.githubusercontent.com/u/23231506?v=4" alt="Florian Tranier" />
+  <h1>Florian Tranier</h1>
+  <p class="hero-sub">Backend &amp; DevOps Engineer · Toulouse, France</p>
+  <p class="hero-bio">
+    Building reliable backend systems, developer tooling and bots.
+    Currently working on <a href="https://planeswalkerhub.com" target="_blank" rel="noopener" style="color:var(--accent)">planeswalkerhub.com</a>.
+  </p>
+  <div class="hero-links">
+    <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+      GitHub
+    </a>
+  </div>
+</section>
+
+<p class="section-label">Selected Projects</p>
+
+<div class="project-grid">
+
+  <!-- Gam8 -->
+  <article class="project-card">
+    <div class="card-top">
+      <div class="card-icon-wrap" style="background:rgba(88,101,242,0.15)">🎮</div>
+      <div class="card-title-group">
+        <div class="card-title">Gam8</div>
+        <div class="card-tagline">Discord gaming partner finder bot</div>
+      </div>
+    </div>
+    <p class="card-desc">
+      A Discord bot that helps multi-gaming communities find teammates. Players post game searches with interactive components; others join in real time with select menus and notifications.
+    </p>
+    <div class="card-tags">
+      <span class="tag lang" style="color:#3178c6">TypeScript</span>
+      <span class="tag">Discord.js</span>
+      <span class="tag">MongoDB</span>
+      <span class="tag">Docker</span>
+    </div>
+    <div class="card-actions">
+      <a class="btn btn-primary" href="gam8.html">View project →</a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/Gam8" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </article>
+
+  <!-- ServeLink -->
+  <article class="project-card">
+    <div class="card-top">
+      <div class="card-icon-wrap" style="background:rgba(0,173,216,0.12)">🔗</div>
+      <div class="card-title-group">
+        <div class="card-title">ServeLink</div>
+        <div class="card-tagline">Lightweight HTTP file server</div>
+      </div>
+    </div>
+    <p class="card-desc">
+      A minimal Go service that exposes directory contents over a REST API. Mount any folder and access its files via HTTP with API key authentication — packaged as a tiny Docker image.
+    </p>
+    <div class="card-tags">
+      <span class="tag lang" style="color:#00add8">Go</span>
+      <span class="tag">Docker</span>
+      <span class="tag">REST API</span>
+      <span class="tag">DevOps</span>
+    </div>
+    <div class="card-actions">
+      <a class="btn btn-primary" href="servelink.html">View project →</a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/servelink" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </article>
+
+  <!-- Cre8Call -->
+  <article class="project-card">
+    <div class="card-top">
+      <div class="card-icon-wrap" style="background:rgba(62,207,142,0.12)">🎙️</div>
+      <div class="card-title-group">
+        <div class="card-title">Cre8Call</div>
+        <div class="card-tagline">Dynamic voice channel manager for Discord</div>
+      </div>
+    </div>
+    <p class="card-desc">
+      A Discord bot that auto-generates temporary voice channels on demand. Users join a "generator" channel and a private room is created instantly; empty channels are cleaned up automatically via Redis-backed listeners.
+    </p>
+    <div class="card-tags">
+      <span class="tag lang" style="color:#f1e05a">JavaScript</span>
+      <span class="tag">Discord.js</span>
+      <span class="tag">Redis</span>
+      <span class="tag">Docker</span>
+    </div>
+    <div class="card-actions">
+      <a class="btn btn-primary" href="cre8call.html">View project →</a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/Cre8Call" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </article>
+
+  <!-- PlaneswalkerHub Tracker Bot -->
+  <article class="project-card">
+    <div class="card-top">
+      <div class="card-icon-wrap" style="background:rgba(255,101,132,0.12)">🃏</div>
+      <div class="card-title-group">
+        <div class="card-title">PlaneswalkerHub Tracker</div>
+        <div class="card-tagline">MTG Commander game tracker bot</div>
+      </div>
+    </div>
+    <p class="card-desc">
+      A Discord bot for Magic: The Gathering Commander communities. Tracks games, win rates, commander performance, and head-to-head matchups — all scoped per Discord server with full search-powered autocomplete.
+    </p>
+    <div class="card-tags">
+      <span class="tag lang" style="color:#f1e05a">JavaScript</span>
+      <span class="tag">Discord.js</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">MeiliSearch</span>
+    </div>
+    <div class="card-actions">
+      <a class="btn btn-primary" href="planeswalkerhub.html">View project →</a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/planeswalkerhub-tracker-bot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<footer>
+  <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">FlorianTranier</a> · Toulouse, France
+</footer>
+
+</body>
+</html>

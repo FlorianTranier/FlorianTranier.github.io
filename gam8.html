@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gam8 — Florian Tranier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">florian<span>.</span>dev</span>
+    <div class="nav-links">
+      <a href="index.html">Projects</a>
+      <a href="https://github.com/FlorianTranier" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://blog.tranier.dev" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="project-page">
+
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to projects
+  </a>
+
+  <div class="project-header">
+    <div class="project-icon" style="background:rgba(88,101,242,0.15)">🎮</div>
+    <div class="project-header-info">
+      <h1>Gam8</h1>
+      <p>Discord bot for finding gaming partners in multi-game communities</p>
+      <div class="project-header-badges">
+        <span class="tag lang" style="color:#3178c6">TypeScript</span>
+        <span class="tag">Discord.js v14</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">AWS S3</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+    <div class="project-header-actions">
+      <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=700290127460827158&permissions=302251088&scope=bot" target="_blank" rel="noopener">
+        Add to Discord
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/FlorianTranier/Gam8" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Source
+      </a>
+    </div>
+  </div>
+
+  <!-- Overview -->
+  <div class="prose-section">
+    <h2>Overview</h2>
+    <p>
+      Gam8 is a Discord bot designed for multi-gaming communities who struggle to coordinate sessions across different games and schedules. Instead of spamming "anyone wanna play?" in a general chat, Gam8 provides a dedicated, interactive channel where players can broadcast structured game searches and let others respond through Discord's native UI components.
+    </p>
+    <p>
+      It leverages Discord's Slash Commands and Components V2 to deliver a rich experience — interactive select menus, private notification opt-ins, and real-time game information pulled from the RAWG.io database.
+    </p>
+  </div>
+
+  <!-- Use Cases -->
+  <div class="prose-section">
+    <h2>Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <div class="uc-icon">🔍</div>
+        <h3>Find teammates</h3>
+        <p>Post a search for up to 4 games at once and let others join via select menu.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">🔔</div>
+        <h3>Notifications</h3>
+        <p>Players opt into DM alerts when someone interacts with a search they care about.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">📅</div>
+        <h3>Scheduled events</h3>
+        <p>Create Discord Scheduled Events directly from the bot with a form-based modal.</p>
+      </div>
+      <div class="use-case-card">
+        <div class="uc-icon">🏷️</div>
+        <h3>Role tagging</h3>
+        <p>Admins assign a role to be pinged on every new search, keeping the right people informed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="prose-section">
+    <h2>Key Features</h2>
+    <ul class="feature-list">
+      <li>Slash command <code>/search</code> to broadcast a game search for 1–4 games simultaneously</li>
+      <li>Interactive select menu — members choose which game(s) they want to join</li>
+      <li>"Notify Me" opt-in for private DM alerts on search activity</li>
+      <li>Direct link to RAWG.io game pages for instant game info</li>
+      <li><code>/event</code> command to create Discord Scheduled Events via a modal dialog</li>
+      <li><code>/tag</code> command for admins to configure a notification role</li>
+      <li><code>/cancel</code> and <code>/clear</code> for search management</li>
+      <li>Automatically creates a dedicated bot channel on server join</li>
+      <li>Fully containerised — ships as a Docker image for easy self-hosting</li>
+    </ul>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="prose-section">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zm16 16V5H5v14h14zM7 7h4v2H7zm0 4h10v2H7zm0 4h7v2H7z"/></svg>
+        TypeScript
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 6.1 18 6.4 18 6.4c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        Discord.js v14
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.154-1.86-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/></svg>
+        MongoDB
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
+        AWS S3
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 0 0 .186-.185v-4.51a.186.186 0 0 0-.186-.185h-2.119a.185.185 0 0 0-.185.185v4.51c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 0 0 .186-.186V1.grip.186.186 0 0 0-.186-.185H11.03a.185.185 0 0 0-.185.185v4.158c0 .102.083.185.185.185M13.17 0H2.547a.185.185 0 0 0-.185.185v19.726c0 .102.083.185.185.185H13.17a.185.185 0 0 0 .184-.185V.185A.185.185 0 0 0 13.17 0z"/></svg>
+        Docker
+      </div>
+      <div class="tech-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        RAWG.io API
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html">← All projects</a> · <a href="https://github.com/FlorianTranier/Gam8" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+</body>
+</html>
