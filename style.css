@@ -134,6 +134,30 @@ nav {
 .hero-links a:hover { border-color: var(--accent); color: var(--accent); }
 .hero-links svg { width: 14px; height: 14px; fill: currentColor; }
 
+/* ── QUICK NAV ── */
+.quicknav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px 40px;
+}
+
+.quicknav-link {
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  transition: all var(--ease);
+}
+
+.quicknav-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
 /* ── SECTION LABEL ── */
 .section-label {
   max-width: 1000px;
@@ -155,6 +179,131 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
   gap: 20px;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto 16px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: calc(24px + 7px);
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-body {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--ease);
+}
+
+.timeline-body:hover { border-color: var(--accent); }
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.timeline-company {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.timeline-role {
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.timeline-meta { text-align: right; flex-shrink: 0; }
+
+.timeline-period {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.timeline-location {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.timeline-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-points li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.835rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.timeline-points li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  .timeline::before { left: calc(24px + 7px); }
+  .timeline-meta { text-align: left; }
 }
 
 /* ── PROJECT CARD ── */
