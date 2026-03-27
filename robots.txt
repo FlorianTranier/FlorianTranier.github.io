@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://floriantranier.github.io/sitemap.xml
+Sitemap: https://florian.tranier.dev/sitemap.xml
